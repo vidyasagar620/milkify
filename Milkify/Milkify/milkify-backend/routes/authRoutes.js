@@ -1,5 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const pool = require("../config/db");
 require("dotenv").config();
@@ -8,8 +7,6 @@ const router = express.Router();
 
 // ✅ Debug: Ensure the route is loading
 console.log("✅ Auth Routes Loaded");
-console.log("✅ Auth Routes Mounted at: /api/auth");
-
 
 // ✅ Admin Login Route
 router.post("/login", async (req, res) => {
@@ -29,9 +26,8 @@ router.post("/login", async (req, res) => {
 
     const user = result.rows[0];
 
-    // 🔒 Compare passwords
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword) {
+    // 🔒 Compare passwords (Plain Text)
+    if (password !== user.password) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 

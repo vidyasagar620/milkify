@@ -19,3 +19,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server is running on http://localhost:${PORT}`);
 });
+
+const productRoutes = require("./routes/productRoutes"); // ✅ Import Product Routes
+app.use("/api/products", productRoutes); // ✅ Mount Product Routes
