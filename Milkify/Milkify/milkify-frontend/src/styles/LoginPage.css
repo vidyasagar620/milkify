@@ -1,0 +1,145 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Light background */
+}
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Design */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Circles */
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  top: 10%;
+  left: 20%;
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  bottom: 10%;
+  right: 15%;
+}
+.login-container1::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(241, 14, 14);
+  border-radius: 50%;
+  bottom: 80%;
+  right: 85%;
+}
+
+/* Login Box */
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Logo */
+.login-logo {
+  width: 100px;
+  height: 100px;
+  /* margin-bottom: 2px; */
+}
+
+/* Title */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.login-input {
+  width: 85%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #000000;
+}
+
+/* Login Button */
+.login-button {
+  width: 90%;
+  padding: 12px;
+  background-color: #5f92ff;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Hover effect */
+.login-button:hover {
+  background-color: #b0b0b0;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.0); /* Darker shadow on hover */
+}
+
+/* Active effect (when button is clicked) */
+.login-button:active {
+  background-color: #a0a0a0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow when clicked */
+}
+
+
+/* Forgot Password & Signup Links */
+.login-links {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: red;
+  text-decoration: none;
+}
+
+.signup-link {
+  color: green;
+  text-decoration: none;
+}
+
+.forgot-password:hover,
+.signup-link:hover {
+  text-decoration: underline;
+}

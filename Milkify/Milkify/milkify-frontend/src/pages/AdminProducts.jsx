@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/AdminProducts.css";
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([]);
@@ -52,43 +53,30 @@ const AdminProducts = () => {
   };
 
   return (
-    <div>
-      <h2>Admin - Manage Products</h2>
+    <div className="admin-container">
+      <h2 className="admin-title">🛒 Admin - Manage Products</h2>
 
       {/* 🔹 Add Product Form */}
-      <form onSubmit={handleAddProduct}>
-        <input type="text" name="name" placeholder="Name" value={newProduct.name} onChange={handleChange} required />
+      <form onSubmit={handleAddProduct} className="product-form">
+        <input type="text" name="name" placeholder="Product Name" value={newProduct.name} onChange={handleChange} required />
         <input type="text" name="description" placeholder="Description" value={newProduct.description} onChange={handleChange} required />
         <input type="number" name="price" placeholder="Price" value={newProduct.price} onChange={handleChange} required />
         <input type="text" name="image_url" placeholder="Image URL" value={newProduct.image_url} onChange={handleChange} required />
-        <button type="submit">Add Product</button>
+        <button type="submit" className="add-btn">➕ Add Product</button>
       </form>
 
-      {/* 🔹 Products Table */}
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td>{product.price}</td>
-              <td><img src={product.image_url} alt={product.name} width="50" /></td>
-              <td>
-                <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {/* 🔹 Products Grid */}
+      <div className="products-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={product.image_url} alt={product.name} className="product-img" />
+            <h3 className="product-name">{product.name}</h3>
+            <p className="product-desc">{product.description}</p>
+            <p className="product-price">₹{product.price}</p>
+            <button className="delete-btn" onClick={() => handleDeleteProduct(product.id)}>❌ Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
