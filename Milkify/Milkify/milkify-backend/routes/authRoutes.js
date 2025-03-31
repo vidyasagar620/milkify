@@ -8,6 +8,8 @@ const router = express.Router();
 
 // ✅ Debug: Ensure the route is loading
 console.log("✅ Auth Routes Loaded");
+console.log("✅ Auth Routes Mounted at: /api/auth");
+
 
 // ✅ Admin Login Route
 router.post("/login", async (req, res) => {

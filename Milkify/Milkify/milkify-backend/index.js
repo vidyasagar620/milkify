@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const pool = require("./config/db");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes"); // ✅ Import Auth Routes
@@ -9,8 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // ✅ Middleware to parse JSON requests
 
-// ✅ Use Routes
-app.use("/api/auth", authRoutes); // Ensure this is correct
+// ✅ Register Routes
+app.use("/api/auth", authRoutes); // Make sure this matches the Postman URL
 
 app.get("/", (req, res) => {
   res.send("Milkify Backend is Running 🚀");
