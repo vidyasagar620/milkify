@@ -1,20 +1,11 @@
 const express = require("express");
-const pool = require("../config/db");
-const { verifyToken } = require("../middleware/authMiddleware");
-
 const router = express.Router();
+const { addProduct, getProducts } = require("../controllers/productController"); // Ensure this path is correct
 
-// Get all products
-router.get("/", async (req, res) => {
-  const result = await pool.query("SELECT * FROM products");
-  res.json(result.rows);
-});
+// Add Product Route
+router.post("/add", addProduct);
 
-// Create a product (Admin Only)
-router.post("/", verifyToken, async (req, res) => {
-  const { name, price, image } = req.body;
-  await pool.query("INSERT INTO products (name, price, image) VALUES ($1, $2, $3)", [name, price, image]);
-  res.json({ message: "Product added" });
-});
+// Get All Products Route
+router.get("/all", getProducts);
 
 module.exports = router;
