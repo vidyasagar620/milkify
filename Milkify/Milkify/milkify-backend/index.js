@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes"); // ✅ Import Auth Routes
+const supplierRoutes = require("./routes/suppliers"); // Import the suppliers route
 
 const app = express();
 app.use(cors());
@@ -22,3 +23,9 @@ app.listen(PORT, () => {
 
 const productRoutes = require("./routes/productRoutes"); // ✅ Import Product Routes
 app.use("/api/products", productRoutes); // ✅ Mount Product Routes
+
+const supplierRoutes = require("./routes/supplierRoutes");
+app.use("/api/suppliers", supplierRoutes);
+
+// ✅ Use Routes
+app.use(supplierRoutes);
