@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar"; 
 import "../styles/Product.css";
 
 const Product = () => {
@@ -21,11 +23,14 @@ const Product = () => {
   };
 
   return (
-    <div className="product-container">
-      <Navbar activePage="product" /> {/* ✅ Pass activePage prop to change navbar color */}
+    <div className="home-container">
+    <Sidebar /> <Navbar />
+    <main className="home-content">
+      <Header />
       
       <header className="product-header">
         <h1>Our Dairy Products</h1>
+        
       </header>
 
       <section className="product-list">
@@ -44,6 +49,8 @@ const Product = () => {
           </div>
         )}
       </section>
+      </main>
+      
     </div>
   );
 };

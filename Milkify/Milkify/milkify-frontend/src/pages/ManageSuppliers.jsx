@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar"; // Ensure Navbar is included
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar"; // ✅ Import Navbar
 import "../styles/ManageSuppliers.css"; // Add CSS file
 
 const ManageSuppliers = () => {
@@ -45,9 +47,13 @@ const ManageSuppliers = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <div className="supplier-container">
+    <div className="home-container">
+    <Sidebar /> <Navbar />
+    <main className="home-content">
+      <Header />
+      
+      <h1>Milkify - Manage Suppliers</h1>
+     <div className="supplier-container">
         <h2>Manage Suppliers</h2>
         <form onSubmit={handleAddSupplier}>
           <input type="text" name="name" placeholder="Supplier Name" value={newSupplier.name} onChange={handleChange} required />
@@ -79,6 +85,7 @@ const ManageSuppliers = () => {
           </tbody>
         </table>
       </div>
+      </main>
     </div>
   );
 };

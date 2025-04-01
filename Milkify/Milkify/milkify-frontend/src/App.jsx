@@ -7,6 +7,7 @@ import AdminProducts from "./pages/AdminProducts";
 import Product from "./components/Product";
 import AdminPanel from "./pages/AdminPanel";
 import ManageSuppliers from "./pages/ManageSuppliers";
+import Collection from "./pages/Collection";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/suppliers" element={<ManageSuppliers />} />
           <Route path="/suppliers" element={<ManageSuppliers />} />
+          <Route path="/collection" element={<Collection />} />
         </Routes>
       </>
     </Router>

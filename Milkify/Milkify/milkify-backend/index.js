@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes"); // ✅ Import Auth Routes
-const supplierRoutes = require("./routes/suppliers"); // Import the suppliers route
+// const supplierRoutes = require("./routes/suppliers"); // Import the suppliers route
 
 const app = express();
 app.use(cors());
@@ -29,3 +29,11 @@ app.use("/api/suppliers", supplierRoutes);
 
 // ✅ Use Routes
 app.use(supplierRoutes);
+app.get("/api/farm-stats", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM farm_stats");
+    res.json(result.rows[0]);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});

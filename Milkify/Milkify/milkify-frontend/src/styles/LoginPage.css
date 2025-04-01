@@ -1,145 +1,119 @@
-
-body, html {
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4; /* Light background */
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
-#root {
-  width: 100%;
-  height: 100%;
+
+/* Body styles */
+body {
+  background: linear-gradient(135deg, #3f5da2, #2e7d32);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Background Design */
+/* Login Container */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffffff;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Background Circles */
-.login-container::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  top: 10%;
-  left: 20%;
-}
-
-.login-container::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  bottom: 10%;
-  right: 15%;
-}
-.login-container1::before {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: rgba(241, 14, 14);
-  border-radius: 50%;
-  bottom: 80%;
-  right: 85%;
+  width: 100%;
 }
 
 /* Login Box */
 .login-box {
   background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  z-index: 1;
+  width: 350px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Logo */
 .login-logo {
-  width: 100px;
-  height: 100px;
-  /* margin-bottom: 2px; */
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
-/* Title */
+/* Login Title */
 .login-title {
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 /* Input Fields */
 .login-input {
-  width: 85%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #000000;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Login Button */
 .login-button {
-  width: 90%;
-  padding: 12px;
-  background-color: #5f92ff;
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
+  width: 100%;
+  background: #5d78b1;
+  color: white;
   border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
-}
-
-/* Hover effect */
-.login-button:hover {
-  background-color: #b0b0b0;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.0); /* Darker shadow on hover */
-}
-
-/* Active effect (when button is clicked) */
-.login-button:active {
-  background-color: #a0a0a0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow when clicked */
-}
-
-
-/* Forgot Password & Signup Links */
-.login-links {
+  padding: 12px;
   margin-top: 10px;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.forgot-password {
-  color: red;
-  text-decoration: none;
+.login-button:hover {
+  background: #839bbe;
 }
 
+/* Links */
+.login-links {
+  margin-top: 15px;
+}
+
+.forgot-password-link,
 .signup-link {
-  color: green;
-  text-decoration: none;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
-.forgot-password:hover,
+.forgot-password-link:hover,
 .signup-link:hover {
-  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .login-box {
+    width: 90%;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

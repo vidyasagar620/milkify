@@ -1,0 +1,17 @@
+.header {
+  background: #64a8ff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: black;
+}
+
+.profile-icon i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
