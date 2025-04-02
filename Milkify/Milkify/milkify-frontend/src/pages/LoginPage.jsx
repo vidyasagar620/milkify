@@ -1,5 +1,7 @@
 import { useState } from "react";
-import "../styles/LoginPage.css"; // If it's in a styles folder
+import "../styles/LoginPage.css";// If it's in a styles folder
+import { Link } from "react-router-dom"; 
+import Logo from "../assets/milkyfy-logo.png"; // Adjust the path as necessary
 
 import { useNavigate } from "react-router-dom";
 
@@ -28,22 +30,22 @@ export default function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-box">
-        <img src="milkyfy-logo-png" alt="Milkify Logo" className="login-logo" />
+        <img src={Logo} alt="Milkify Logo" className="login-logo" />
         <h2 className="login-title">Login</h2>
     <div className="p-6">
       <h1 className="text-2xl font-bold">Admin Login</h1>
       <form onSubmit={handleLogin} className="mt-4">
-        <input type="email" placeholder="enter your Email" value={email} onChange={(e) => setEmail(e.target.value)} className="login-input" />
+        <input type="email" placeholder="Enter your Email" value={email} onChange={(e) => setEmail(e.target.value)} className="login-input" />
         <input type="password" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} className="login-input" />
         <button type="submit" className="login-button">Login</button>
       </form>
       <div className="login-links">
-          <button onClick={() => navigate("/forgot-password")} className="forgot-password-link">
-            Forgot Password?
-          </button>
-          <button onClick={() => navigate("/signup")} className="signup-link">
-            Signup
-          </button>
+      <Link to="/forgot-password" className="text-red-500 hover:underline">
+          Forgot Password?
+        </Link>
+        <Link to="/signup" className="text-blue-500 hover:underline">
+          Signup
+        </Link>
         </div>
     </div>
     </div>

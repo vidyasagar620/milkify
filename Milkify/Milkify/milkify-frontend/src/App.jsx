@@ -8,6 +8,10 @@ import Product from "./components/Product";
 import AdminPanel from "./pages/AdminPanel";
 import ManageSuppliers from "./pages/ManageSuppliers";
 import Collection from "./pages/Collection";
+import SignupPage from "./pages/SignupPage";
+import ForgotPassword from "./pages/ForgotPassword";
+import SavePassword from "./pages/SavePassword";
+
 
 
 
@@ -22,6 +26,9 @@ function App() {
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/products" element={<Product />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/save-password" element={<SavePassword />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/suppliers" element={<ManageSuppliers />} />
