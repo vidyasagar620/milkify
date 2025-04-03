@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import Navbar from "../components/Navbar"; // ✅ Import Navbar
+// import Navbar from "../components/Navbar"; // ✅ Import Navbar
 import "../styles/HomePage.css";
+
 
 const HomePage = () => {
   const [stats, setStats] = useState({ cows: 0, dailyMilk: 0, earnings: 0 });
@@ -47,13 +48,16 @@ const HomePage = () => {
   return (
     
     <div className="home-container">
-      <Sidebar /> <Navbar />
+      
+      <Sidebar /> 
+      
       <main className="home-content">
         <Header />
         
         
         {/* Farm Stats */}
         <section className="farm-stats">
+          
           <div className="stats-card">
             <h3>Total Cows</h3>
             <p>{stats.cows}</p>

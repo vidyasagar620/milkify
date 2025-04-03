@@ -9,6 +9,8 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Sidebar.css";
+import Logo from "../assets/milkyfy-logo.png"; // Adjust the path as necessary
+
 
 const Sidebar = () => {
   const location = useLocation(); // ✅ Get the current route
@@ -16,7 +18,7 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        <img src="/logo.png" alt="Milkify Logo" />
+        <img src={Logo} alt="Milkify Logo" className="login-logo" />
       </div>
       <nav className="sidebar-nav">
         <Link to="/home" className={location.pathname === "/home" ? "active" : ""}>

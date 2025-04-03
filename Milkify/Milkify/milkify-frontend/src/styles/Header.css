@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 520PX;
 }
 
 .header h1 {

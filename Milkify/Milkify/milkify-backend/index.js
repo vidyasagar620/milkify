@@ -27,6 +27,9 @@ app.use("/api/products", productRoutes); // ✅ Mount Product Routes
 const supplierRoutes = require("./routes/supplierRoutes");
 app.use("/api/suppliers", supplierRoutes);
 
+const collection = require("./routes/collections");
+app.use("/api/collections", Collections);
+
 // ✅ Use Routes
 app.use(supplierRoutes);
 app.get("/api/farm-stats", async (req, res) => {
