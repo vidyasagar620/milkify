@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../db"); // Assuming you have PostgreSQL connection setup
 
-// ✅ Add a New Supplier
+//Add a New Supplier
 router.post("/api/suppliers", async (req, res) => {
   try {
     const { name, contact, address } = req.body;
@@ -23,7 +23,7 @@ router.post("/api/suppliers", async (req, res) => {
   }
 });
 
-// ✅ Fetch All Suppliers
+//Fetch All Suppliers
 router.get("/api/suppliers", async (req, res) => {
   try {
     const suppliers = await pool.query("SELECT * FROM suppliers ORDER BY id ASC");
