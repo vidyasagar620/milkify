@@ -9,11 +9,10 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Sidebar.css";
-import Logo from "../assets/milkyfy-logo.png"; // Adjust the path as necessary
-
+import Logo from "../assets/milkyfy-logo.png";
 
 const Sidebar = () => {
-  const location = useLocation(); // ✅ Get the current route
+  const location = useLocation();
 
   return (
     <aside className="sidebar">

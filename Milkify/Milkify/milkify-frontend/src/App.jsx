@@ -11,6 +11,7 @@ import Collection from "./pages/Collection";
 import SignupPage from "./pages/SignupPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import SavePassword from "./pages/SavePassword";
+import Supplier from "./pages/Supplier";
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/admin/suppliers" element={<ManageSuppliers />} />
           <Route path="/suppliers" element={<ManageSuppliers />} />
           <Route path="/collection" element={<Collection />} />
+          <Route path="/supplier" element={<Supplier />} />
         </Routes>
       </>
     </Router>
