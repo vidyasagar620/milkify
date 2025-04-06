@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import Navbar from "../components/Navbar"; // ✅ Import Navbar
+// import Navbar from "../components/Navbar"; // ✅ Import Navbar
 import "../styles/ManageSuppliers.css"; // Add CSS file
 
 const ManageSuppliers = () => {
@@ -48,7 +48,7 @@ const ManageSuppliers = () => {
 
   return (
     <div className="home-container">
-    <Sidebar /> <Navbar />
+    <Sidebar /> 
     <main className="home-content">
       <Header />
       

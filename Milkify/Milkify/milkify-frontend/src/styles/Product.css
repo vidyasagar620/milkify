@@ -9,7 +9,7 @@
 .product-container {
   font-family: "Arial", sans-serif;
   background-color: #f8f9fa;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 /* ✅ Change Navbar Color on Product Page */
@@ -20,9 +20,12 @@
 /* ✅ Header Styling */
 .product-header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px ;
   background: linear-gradient(135deg, #27ae60, #2ecc71);
   color: white;
+  margin: 20px;
+  border-radius: 8px;
+  margin-left: -1px;
 }
 
 .product-header h1 {

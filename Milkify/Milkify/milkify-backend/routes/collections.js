@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db.js"); // Import DB connection
+const pool = require("../config/db");
 
 //  Fetch all collections from the database
 router.get("/", async (req, res) => {

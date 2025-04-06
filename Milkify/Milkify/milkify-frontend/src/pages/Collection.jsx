@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import "../styles/Collection.css";
 
@@ -22,14 +22,14 @@ const Collection = () => {
   };
 
   return (
-    <div className="collection-page">
+    <div className="home-container">
       <Sidebar />
-      <div className="main-content">
-        <Navbar /> <Header/>
-        <header className="collection-header">
+      <div className="home-content">
+        <Header/>
+        <section className="collection-header">
           <h1>Our Collections</h1>
           <p>Explore our premium dairy collections</p>
-        </header>
+        </section>
 
         <section className="collection-grid">
           {collections.length === 0 ? (

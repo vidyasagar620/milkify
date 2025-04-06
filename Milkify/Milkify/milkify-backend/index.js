@@ -27,8 +27,8 @@ app.use("/api/products", productRoutes); // ✅ Mount Product Routes
 const supplierRoutes = require("./routes/supplierRoutes");
 app.use("/api/suppliers", supplierRoutes);
 
-const collection = require("./routes/collections");
-app.use("/api/collections", Collections);
+const collections = require("./routes/collections");
+app.use("/api/collections", collections);
 
 // ✅ Use Routes
 app.use(supplierRoutes);

@@ -1,10 +1,20 @@
 .header {
   background: #64a8ff;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 520PX;
+  /* margin-top: 440px; */
+  border-radius: 20px;
+  
+
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .header h1 {
