@@ -3,18 +3,18 @@ const pool = require("../config/db");
 
 const router = express.Router();
 
-// ✅ Get all products
+// Get all products
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM products ORDER BY created_at DESC");
     res.json(result.rows);
   } catch (error) {
-    console.error("❌ Error fetching products:", error);
+    console.error("Error fetching products:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// ✅ Add a new product
+// Add a new product
 router.post("/", async (req, res) => {
   try {
     const { name, description, price, image_url } = req.body;
@@ -30,12 +30,12 @@ router.post("/", async (req, res) => {
 
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    console.error("❌ Error adding product:", error);
+    console.error("Error adding product:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// ✅ Update an existing product
+//  Update an existing product
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -52,12 +52,12 @@ router.put("/:id", async (req, res) => {
 
     res.json(result.rows[0]);
   } catch (error) {
-    console.error("❌ Error updating product:", error);
+    console.error("Error updating product:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-// ✅ Delete a product
+// Delete a product
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -70,7 +70,7 @@ router.delete("/:id", async (req, res) => {
 
     res.json({ message: "Product deleted successfully" });
   } catch (error) {
-    console.error("❌ Error deleting product:", error);
+    console.error("Error deleting product:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });

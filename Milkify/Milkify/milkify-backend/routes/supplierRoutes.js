@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/db"); // PostgreSQL database connection
 
-// ✅ Add a new supplier
+//Add a new supplier
 router.post("/", async (req, res) => {
     const { name, contact, address } = req.body;
     if (!name || !contact || !address) {
@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// ✅ Get all suppliers
+//  Get all suppliers
 router.get("/", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM suppliers");
@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// ✅ Delete a supplier
+//Delete a supplier
 router.delete("/:id", async (req, res) => {
     try {
         const result = await pool.query("DELETE FROM suppliers WHERE id = $1 RETURNING *", [req.params.id]);

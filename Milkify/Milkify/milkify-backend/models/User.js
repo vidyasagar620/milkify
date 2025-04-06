@@ -12,7 +12,7 @@ const createUserTable = async () => {
     );
   `;
   await pool.query(query);
-  console.log("✅ Users table created successfully!");
+  console.log("Users table created successfully!");
 };
 
 module.exports = { createUserTable };
