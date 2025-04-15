@@ -15,7 +15,7 @@ const ForgotPassword = () => {
       navigate("/save-password");  // This should take you to /save-password
     }, 2000);  // Redirect after 2 seconds
   };
-
+//remove the console.log(data) line if you don't need it
   return (
     <div className="forgot-password-container">
       <div className="forgot-password-box">
