@@ -40,3 +40,6 @@ app.get("/api/farm-stats", async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+const paymentRoutes = require("./routes/paymentRoutes");
+app.use("/api", paymentRoutes);

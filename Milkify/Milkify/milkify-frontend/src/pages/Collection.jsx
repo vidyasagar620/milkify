@@ -25,7 +25,6 @@ const Collection = () => {
     <div className="home-container">
       <Sidebar />
       <div className="home-content">
-        <Header/>
         <section className="collection-header">
           <h1>Our Collections</h1>
           <p>Explore our premium dairy collections</p>

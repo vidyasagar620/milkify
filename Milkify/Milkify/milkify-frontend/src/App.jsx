@@ -13,7 +13,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SavePassword from "./pages/SavePassword";
 import Supplier from "./pages/Supplier";
 import Contact from "./pages/Contact";
-import Payment from './pages/Payment'; 
+import Payments from './pages/Payments'; 
 import Sidebar from "./components/Sidebar";
 
 
@@ -41,7 +41,7 @@ function App() {
           <Route path="/collection" element={<Collection />} />
           <Route path="/supplier" element={<Supplier />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/payments" element={<Payment />} />
+          <Route path="/payments" element={<Payments />} />
 
           
           <Route path="*" element={<div>Page Not Found</div>} />

@@ -1,0 +1,172 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+} 
+
+h1, h3 {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  /* background-color: #4CAF50; */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="number"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  width: 80%;
+}
+select{
+
+  width: 80%;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+}
+ time{
+  width: 80%;
+  padding: 10px;
+
+}
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+input[type="time"]
+{
+  width: 80%;
+  padding: 10px;
+  background-color: #fff  ;
+  color: #000;
+}
+/* Styling for payment item buttons */
+li button {
+  margin-left: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets (portrait) and smaller devices */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .form-container {
+    display: block;
+  }
+
+  li {
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  li button {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    font-size: 12px;
+  }
+
+  li button {
+    font-size: 14px;
+  }
+}
+.payment-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+
+}
+
+.payment-container h3 {
+  margin-top: 40px;
+}
+
+.recharts-wrapper {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}

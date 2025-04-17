@@ -66,7 +66,6 @@ const Product = () => {
     <div className="home-container">
       <Sidebar />
       <main className="home-content">
-        <Header />
         <div className="product-section">
           <h2>🛒 Manage Products</h2>
 
