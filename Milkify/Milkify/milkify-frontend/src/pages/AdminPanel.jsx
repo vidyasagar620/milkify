@@ -3,7 +3,9 @@ import "../styles/AdminPanel.css";
 
 const AdminPanel = () => {
   return (
+    
     <div className="admin-panel">
+      
       <h2>Admin Dashboard</h2>
       <ul>
         <li><Link to="/admin/products">Manage Products</Link></li>

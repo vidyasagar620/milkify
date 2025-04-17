@@ -29,6 +29,9 @@
   text-decoration: none;
   font-size: 1rem;
   transition: 0.3s;
+  border-radius: 10px;
+  margin-left: -10px;
+
 }
 
 .sidebar-nav a:hover, .sidebar-nav a.active {

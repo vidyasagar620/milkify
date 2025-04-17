@@ -35,8 +35,8 @@ const Sidebar = () => {
         <Link to="/payments" className={location.pathname === "/payments" ? "active" : ""}>
           <FontAwesomeIcon icon={faCreditCard} /> Payments
         </Link>
-        <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>
-          <FontAwesomeIcon icon={faPhone} /> Contact
+        <Link to="/admin" className={location.pathname === "/admin" ? "active" : ""}>
+          <FontAwesomeIcon icon={faPhone} /> AdminPanel
         </Link>
       </nav>
     </aside>

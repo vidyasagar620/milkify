@@ -13,7 +13,7 @@ app.use(express.json()); // ✅ Middleware to parse JSON requests
 app.use("/api/auth", authRoutes); // Make sure this matches the Postman URL
 
 app.get("/", (req, res) => {
-  res.send("Milkify Backend is Running 🚀");
+  res.send("Milkify Backend is Running ");
 });
 
 const PORT = process.env.PORT || 5000;
