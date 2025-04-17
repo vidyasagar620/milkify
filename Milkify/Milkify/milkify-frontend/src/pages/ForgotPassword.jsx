@@ -15,6 +15,7 @@ const ForgotPassword = () => {
       navigate("/save-password");  // This should take you to /save-password
     }, 2000);  // Redirect after 2 seconds
   };
+  // This function simulates sending a password reset link to the user's email.
 
   return (
     <div className="forgot-password-container">
