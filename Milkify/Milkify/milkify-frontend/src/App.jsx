@@ -12,6 +12,10 @@ import SignupPage from "./pages/SignupPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import SavePassword from "./pages/SavePassword";
 import Supplier from "./pages/Supplier";
+import Contact from "./pages/Contact";
+import Payment from './pages/Payment'; 
+import Sidebar from "./components/Sidebar";
+
 
 
 
@@ -36,6 +40,12 @@ function App() {
           <Route path="/suppliers" element={<ManageSuppliers />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/supplier" element={<Supplier />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/payments" element={<Payment />} />
+
+          
+          <Route path="*" element={<div>Page Not Found</div>} />
+
         </Routes>
       </>
     </Router>
