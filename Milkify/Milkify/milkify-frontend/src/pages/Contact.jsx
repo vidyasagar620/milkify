@@ -39,7 +39,7 @@ const Contact = () => {
               <h3>Get in Touch</h3>
               <ul className="contact-list">
                 <li><Mail className="icon" /> support@milkify.com</li>
-                <li><Phone className="icon" /> +91 98765 43210</li>
+                <li><Phone className="icon" /> +91 6201581541</li>
                 <li><MapPin className="icon" /> 123 Dairy Lane, Village Town, India</li>
                 <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
                   <img src="/whatsapp-icon.svg" alt="WhatsApp" className="icon" /> Chat on WhatsApp

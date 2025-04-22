@@ -24,15 +24,26 @@ const Payments = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (editId) {
-      await axios.put(`http://localhost:5000/api/payments/${editId}`, form);
-    } else {
-      await axios.post("http://localhost:5000/api/payments", form);
+  
+    let finalDate = form.date;
+    if (!form.date.includes("T")) {
+      const currentTime = new Date().toTimeString().slice(0, 5); // HH:mm
+      finalDate = `${form.date}T${currentTime}`;
     }
+  
+    const payload = { ...form, date: finalDate };
+  
+    if (editId) {
+      await axios.put(`http://localhost:5000/api/payments/${editId}`, payload);
+    } else {
+      await axios.post("http://localhost:5000/api/payments", payload);
+    }
+  
     setForm({ title: "", amount: "", type: "income", date: "" });
     setEditId(null);
     fetchPayments();
   };
+  
 
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:5000/api/payments/${id}`);
@@ -44,8 +55,16 @@ const Payments = () => {
     setEditId(payment.id);
   };
 
-  const today = new Date().toISOString().split("T")[0];
-  const todayTotal = payments.filter(p => p.date === today);
+  const today = new Date();
+  const todayTotal = payments.filter(p => {
+    const paymentDate = new Date(p.date);
+    return (
+      paymentDate.getDate() === today.getDate() &&
+      paymentDate.getMonth() === today.getMonth() &&
+      paymentDate.getFullYear() === today.getFullYear()
+    );
+  });
+  
   const todayIncome = todayTotal.filter(p => p.type === "income").reduce((acc, p) => acc + Number(p.amount), 0);
   const todayExpense = todayTotal.filter(p => p.type === "expense").reduce((acc, p) => acc + Number(p.amount), 0);
 
@@ -82,7 +101,10 @@ const Payments = () => {
             <h4>{p.title}</h4>
             <p>₹{p.amount}</p>
             <p>{p.type.toUpperCase()}</p>
-            <p>{p.date}</p>
+            <p>{new Date(p.date).toLocaleString("en-IN", {
+  dateStyle: "medium",
+  timeStyle: "short"
+})}</p>
             <button onClick={() => handleEdit(p)}>Edit</button>
             <button onClick={() => handleDelete(p.id)}>Delete</button>
           </div>

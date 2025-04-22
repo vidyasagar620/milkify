@@ -9,12 +9,16 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [suppliers, setSuppliers] = useState([]);
   const [collections, setCollections] = useState([]); // ✅ New state
+  const [payments, setPayments] = useState([]);
+
 
   useEffect(() => {
     fetchFarmStats();
     fetchProducts();
     fetchSuppliers();
-    fetchCollections(); // ✅ Fetch collections on mount
+    fetchPayments();
+    fetchCollections(); 
+    // ✅ Fetch collections on mount
   }, []);
 
   const fetchFarmStats = async () => {
@@ -52,6 +56,29 @@ const HomePage = () => {
       console.error("Error fetching collections:", error);
     }
   };
+  const fetchPayments = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/payments");
+      setPayments(res.data);
+    } catch (error) {
+      console.error("Error fetching payments:", error);
+    }
+  };
+  const today = new Date().toISOString().split("T")[0];
+
+const todayPayments = payments.filter(p => p.date === today);
+
+const todayIncome = todayPayments
+  .filter(p => p.type === "income")
+  .reduce((acc, p) => acc + Number(p.amount), 0);
+
+const todayExpense = todayPayments
+  .filter(p => p.type === "expense")
+  .reduce((acc, p) => acc + Number(p.amount), 0);
+
+const todayEarning = todayIncome - todayExpense;
+
+  
 
   return (
     <div className="home-container">
@@ -71,9 +98,10 @@ const HomePage = () => {
             <p>{stats.dailyMilk} L</p>
           </div>
           <div className="stats-card">
-            <h3>Daily Earnings</h3>
-            <p>₹{stats.earnings}</p>
+          <h3>Daily Earnings</h3>
+          <p>₹{todayEarning.toFixed(2)}</p> {/* ✅ live from database */}
           </div>
+
         </section>
 
         {/* ✅ Products Section */}
